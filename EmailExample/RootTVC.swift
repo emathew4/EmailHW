@@ -51,6 +51,9 @@ class RootTVC: UITableViewController {
 
     func addButtonTapped(){
         emails.append(spamEmail)
+        tableView.beginUpdates()
+        tableView.insertRows(at: [IndexPath(row: emails.count-1, section: 0)], with: .automatic)
+        tableView.endUpdates()
         
     }
     override func didReceiveMemoryWarning() {
