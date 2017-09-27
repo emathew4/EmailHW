@@ -19,7 +19,7 @@ class RootTVC: UITableViewController {
     var selectedFolder = ""
     var delegate: CellSelectedDelegate?
     var index: Int = -1
-    var deletedEmail: Email?
+    var deletedEmails = [Email]()
     
     let spamEmail = Email(sender: "spam@asu.edu", recipient: "me@asu.edu", subject: "Spam!", contents: "You have spam!")
 
@@ -51,8 +51,7 @@ class RootTVC: UITableViewController {
 
     func addButtonTapped(){
         emails.append(spamEmail)
-        performSegue(withIdentifier: "returnToMenuTVC", sender: self)
-
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -105,10 +104,13 @@ class RootTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            deletedEmail = emails.remove(at: indexPath.row)
+            print(emails.count)
+            print(indexPath.row)
+            //deletedEmails = emails.remove(at: indexPath.row)
+            deletedEmails.append(emails.remove(at:indexPath.row))
             index = indexPath.row
             tableView.deleteRows(at: [indexPath], with: .fade)
-            performSegue(withIdentifier: "returnToMenuTVC", sender: self)
+            //performSegue(withIdentifier: "returnToMenuTVC", sender: self)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
  
@@ -141,7 +143,7 @@ class RootTVC: UITableViewController {
         if selectedFolder == "Inbox" {
             if index > -1 {
                 destVC.dataDictionary["Inbox"] = emails
-                destVC.dataDictionary["Trash"]!.append(deletedEmail!)
+                destVC.dataDictionary["Trash"] = destVC.dataDictionary["Trash"]! + deletedEmails
                 
             }
         }
