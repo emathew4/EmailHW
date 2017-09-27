@@ -28,7 +28,9 @@ class RootTVC: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(RootTVC.back(sender:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         if selectedFolder == "Inbox" {
             self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -40,6 +42,11 @@ class RootTVC: UITableViewController {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
             
         }
+    }
+    
+    func back(sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "returnToMenuTVC", sender: self)
+        _ = navigationController?.popViewController(animated: true)
     }
 
     func addButtonTapped(){
