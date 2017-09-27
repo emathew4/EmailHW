@@ -28,17 +28,20 @@ class RootTVC: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        
+        // add custom back button
         self.navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(RootTVC.back(sender:)))
         self.navigationItem.leftBarButtonItem = newBackButton
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         if selectedFolder == "Inbox" {
+            // add edit button if in inbox
             self.navigationItem.rightBarButtonItem = self.editButtonItem
         }
-        
-        //let addButton = UIBarButtonItem(barButtonSystemItem:.add, target:self, action: @selector(addAction:))
 
         if selectedFolder == "Sent" {
+            // add + button if in sent folder
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
             
         }
@@ -50,7 +53,10 @@ class RootTVC: UITableViewController {
     }
 
     func addButtonTapped(){
+        // change emails to add new sent email
         emails.append(spamEmail)
+        
+        // update tableView to display new email
         tableView.beginUpdates()
         tableView.insertRows(at: [IndexPath(row: emails.count-1, section: 0)], with: .automatic)
         tableView.endUpdates()
@@ -106,10 +112,8 @@ class RootTVC: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            //deletedEmails = emails.remove(at: indexPath.row)
+            // Delete the row from the data source and added to deletedEmails
             deletedEmails.append(emails.remove(at:indexPath.row))
-            index = indexPath.row
             tableView.deleteRows(at: [indexPath], with: .fade)
             //performSegue(withIdentifier: "returnToMenuTVC", sender: self)
         } else if editingStyle == .insert {
@@ -141,14 +145,21 @@ class RootTVC: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         let destVC = segue.destination as! MenuTVC
+        
+        // perform segue if user was in Inbox
         if selectedFolder == "Inbox" {
+            // check to make sure that they actually deleted an email
             if index > -1 {
+                // delete deleted emails from Inbox in datadictionary
                 destVC.dataDictionary["Inbox"] = emails
+                // added deleted emails to Trash in dataDictionary
                 destVC.dataDictionary["Trash"] = destVC.dataDictionary["Trash"]! + deletedEmails
                 
             }
         }
+        // see if user was in sent folder
         if selectedFolder == "Sent" {
+            // update sent folder emails
             destVC.dataDictionary["Sent"]=emails
         }
     }
