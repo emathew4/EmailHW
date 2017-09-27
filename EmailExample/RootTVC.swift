@@ -21,7 +21,7 @@ class RootTVC: UITableViewController {
     var index: Int = -1
     var deletedEmail: Email?
     
-    let spamEmail = Email(sender: "spam@asu.edu", subject: "Spam!", contents: "You have spam!")
+    let spamEmail = Email(sender: "spam@asu.edu", recipient: "me@asu.edu", subject: "Spam!", contents: "You have spam!")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +37,12 @@ class RootTVC: UITableViewController {
         //let addButton = UIBarButtonItem(barButtonSystemItem:.add, target:self, action: @selector(addAction:))
 
         if selectedFolder == "Sent" {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+            
         }
     }
 
-    func addTapped(){
+    func addButtonTapped(){
         emails.append(spamEmail)
         performSegue(withIdentifier: "returnToMenuTVC", sender: self)
 
@@ -104,7 +105,7 @@ class RootTVC: UITableViewController {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
  
-        }    
+        } 
     }
     
 
