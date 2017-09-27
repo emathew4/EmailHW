@@ -33,11 +33,19 @@ class RootTVC: UITableViewController {
         if selectedFolder == "Inbox" {
             self.navigationItem.rightBarButtonItem = self.editButtonItem
         }
+        
+        //let addButton = UIBarButtonItem(barButtonSystemItem:.add, target:self, action: @selector(addAction:))
+
         if selectedFolder == "Sent" {
-            self.navigationItem.rightBarButtonItem = self.editButtonItem //needs to be plus button instead
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
         }
     }
 
+    func addTapped(){
+        emails.append(spamEmail)
+        performSegue(withIdentifier: "returnToMenuTVC", sender: self)
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -95,7 +103,7 @@ class RootTVC: UITableViewController {
             performSegue(withIdentifier: "returnToMenuTVC", sender: self)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-            emails.append(spamEmail)
+ 
         }    
     }
     
