@@ -22,27 +22,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hna-vf-ziK">
-                                <rect key="frame" x="16" y="72" width="343" height="55"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hna-vf-ziK">
+                                <rect key="frame" x="16" y="72" width="343" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email Recipient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSs-3c-F1a">
-                                <rect key="frame" x="16" y="164" width="343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Recipient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSs-3c-F1a">
+                                <rect key="frame" x="16" y="149.5" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email Sender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uon-T5-zHw">
-                                <rect key="frame" x="16" y="135" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Sender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uon-T5-zHw">
+                                <rect key="frame" x="16" y="120.5" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email Contents" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5y-YE-WdU">
-                                <rect key="frame" x="16" y="207" width="343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Contents" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5y-YE-WdU">
+                                <rect key="frame" x="16" y="194.5" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,21 +49,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HSs-3c-F1a" firstAttribute="trailing" secondItem="rE6-tc-vsJ" secondAttribute="trailingMargin" id="78f-Cy-wnF"/>
-                            <constraint firstItem="Hna-vf-ziK" firstAttribute="leading" secondItem="rE6-tc-vsJ" secondAttribute="leadingMargin" id="7r8-LZ-GMR"/>
-                            <constraint firstItem="y5y-YE-WdU" firstAttribute="top" secondItem="HSs-3c-F1a" secondAttribute="bottom" constant="8" id="HQC-sR-JDe"/>
-                            <constraint firstItem="y5y-YE-WdU" firstAttribute="leading" secondItem="rE6-tc-vsJ" secondAttribute="leadingMargin" id="HQU-pC-aji"/>
-                            <constraint firstItem="HSs-3c-F1a" firstAttribute="top" secondItem="Hna-vf-ziK" secondAttribute="bottom" constant="8" id="LzE-GC-W7v"/>
-                            <constraint firstItem="HSs-3c-F1a" firstAttribute="leading" secondItem="rE6-tc-vsJ" secondAttribute="leadingMargin" id="WOp-Xd-1e3"/>
-                            <constraint firstItem="Hna-vf-ziK" firstAttribute="top" secondItem="YLk-9i-h8o" secondAttribute="bottom" constant="8" id="a2r-kc-52h"/>
-                            <constraint firstItem="y5y-YE-WdU" firstAttribute="trailing" secondItem="rE6-tc-vsJ" secondAttribute="trailingMargin" id="aSI-KG-Pnu"/>
-                            <constraint firstItem="Hna-vf-ziK" firstAttribute="trailing" secondItem="rE6-tc-vsJ" secondAttribute="trailingMargin" id="bcQ-I6-y02"/>
+                            <constraint firstItem="y5y-YE-WdU" firstAttribute="top" secondItem="HSs-3c-F1a" secondAttribute="bottom" constant="24" id="0cv-Ix-MnC"/>
+                            <constraint firstItem="y5y-YE-WdU" firstAttribute="leading" secondItem="rE6-tc-vsJ" secondAttribute="leadingMargin" id="Bwb-yf-XI7"/>
+                            <constraint firstItem="HSs-3c-F1a" firstAttribute="trailing" secondItem="rE6-tc-vsJ" secondAttribute="trailingMargin" id="Deh-zA-qUK"/>
+                            <constraint firstItem="HSs-3c-F1a" firstAttribute="top" secondItem="uon-T5-zHw" secondAttribute="bottom" constant="8" id="KIS-0t-fQx"/>
+                            <constraint firstItem="uon-T5-zHw" firstAttribute="top" secondItem="Hna-vf-ziK" secondAttribute="bottom" constant="16" id="NX6-hq-zoo"/>
+                            <constraint firstItem="HSs-3c-F1a" firstAttribute="leading" secondItem="rE6-tc-vsJ" secondAttribute="leadingMargin" id="RVN-qm-5oU"/>
+                            <constraint firstItem="uon-T5-zHw" firstAttribute="trailing" secondItem="rE6-tc-vsJ" secondAttribute="trailingMargin" id="Yad-eM-0af"/>
+                            <constraint firstItem="y5y-YE-WdU" firstAttribute="trailing" secondItem="rE6-tc-vsJ" secondAttribute="trailingMargin" id="hN3-dT-rMN"/>
+                            <constraint firstItem="uon-T5-zHw" firstAttribute="leading" secondItem="rE6-tc-vsJ" secondAttribute="leadingMargin" id="idm-sZ-4Yj"/>
+                            <constraint firstItem="Hna-vf-ziK" firstAttribute="top" secondItem="YLk-9i-h8o" secondAttribute="bottom" constant="8" id="ivL-A0-lpf"/>
+                            <constraint firstItem="Hna-vf-ziK" firstAttribute="leading" secondItem="rE6-tc-vsJ" secondAttribute="leadingMargin" id="j4a-pr-Neo"/>
+                            <constraint firstItem="Hna-vf-ziK" firstAttribute="trailing" secondItem="rE6-tc-vsJ" secondAttribute="trailingMargin" id="w1a-oD-Oel"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="contentsLabel" destination="y5y-YE-WdU" id="Ffu-ue-d6y"/>
                         <outlet property="recipientLabel" destination="HSs-3c-F1a" id="yAL-yf-Q00"/>
-                        <outlet property="senderLabel" destination="HSs-3c-F1a" id="O0f-kE-j8N"/>
+                        <outlet property="senderLabel" destination="uon-T5-zHw" id="WKt-v9-Qf0"/>
                         <outlet property="titleLabel" destination="Hna-vf-ziK" id="Hah-1r-sE3"/>
                     </connections>
                 </viewController>
@@ -72,7 +74,7 @@
             </objects>
             <point key="canvasLocation" x="301.60000000000002" y="170.46476761619192"/>
         </scene>
-        <!--Email-->
+        <!--me@asu.edu-->
         <scene sceneID="qbf-cS-bGn">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="aQd-eh-QS2" customClass="MenuTVC" customModule="EmailExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -104,7 +106,7 @@
                             <outlet property="delegate" destination="aQd-eh-QS2" id="fyb-t3-X8u"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Email" id="zem-jU-hiM"/>
+                    <navigationItem key="navigationItem" title="me@asu.edu" id="zem-jU-hiM"/>
                     <connections>
                         <segue destination="L9c-r4-5g4" kind="show" identifier="cellSelected" id="yNd-pB-5dv"/>
                     </connections>
